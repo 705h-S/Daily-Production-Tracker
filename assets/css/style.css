@@ -22,6 +22,7 @@ textarea {
   border-bottom: 10px solid black;
 }
 
+
 .description{
   white-space: pre-wrap;
 }
@@ -78,6 +79,8 @@ textarea {
 }
 
 .saveBtn i:hover {
-  font-size: 20px;
+  font-size: 30px;
   transition: all .3s ease-in-out;
+  
 }
+

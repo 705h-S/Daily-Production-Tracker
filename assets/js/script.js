@@ -20,9 +20,14 @@
    
     var save;
     
+    // now will display current hour 
+    var now = moment().format( " h ");
+
+    console.log(date);
+    console.log(now);
 
     // currentDay id element= displays current day
-    $("#currentDay").text(date.format("ddd, MMM-D-YYYY" ));
+    $("#currentDay").text(date.format("ddd, MMM D, YYYY" ));
 
     // displays dynamic current time 
      let updateTime = function () {
@@ -32,13 +37,16 @@
     updateTime();
 
     setInterval(updateTime, 500);
-
+   // end of current time display 
+    
+    // 
+    function colorEL (){
+        
+    }   
 
     function saveEl() {
         
     }
 
-    function colorEl(){
-
-    }
+   
   
