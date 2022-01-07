@@ -15,6 +15,30 @@
 // -- create an addlistener event on save button
 // -- when button it 'clicked' the user input in that section will be saved using localstorage.setitem.
 
+    //  Create my Variables 
+    var date = moment();
+   
+    var save;
+    
+
+    // currentDay id element= displays current day
+    $("#currentDay").text(date.format("ddd, MMM-D-YYYY" ));
+
+    // displays dynamic current time 
+     let updateTime = function () {
+        let currentTime = moment().format('h:mm:ss a ')
+        $("#currentTime").text(currentTime)
+    }
+    updateTime();
+
+    setInterval(updateTime, 500);
 
 
+    function saveEl() {
+        
+    }
 
+    function colorEl(){
+
+    }
+  
