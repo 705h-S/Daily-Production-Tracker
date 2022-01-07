@@ -8,7 +8,7 @@
 // -- if curent hour is equal to a section it'll be red
 // -- elseif section is less than curent hour it'll be grey
 //-- else section is greater than current hour it'll be green
-//       #########
+//         #########
 // inside those sections user can input a string 
 // -- section will have input tag with a type of text so user can input string 
 // user's input of string can be locally saved if user manually press save button
