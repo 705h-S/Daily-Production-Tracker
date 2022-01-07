@@ -27,7 +27,7 @@
     console.log(now);
 
     // currentDay id element= displays current day
-    $("#currentDay").text(date.format("ddd, MMM D, YYYY" ));
+    $("#currentDay").text(date.format("ddd, MMM Do, YYYY" ));
 
     // displays dynamic current time 
      let updateTime = function () {
@@ -39,13 +39,24 @@
     setInterval(updateTime, 500);
    // end of current time display 
     
-    // 
+    // Time block changes color depending what time 
+    // now == timeblock add class .present
+    // now < time block add class .future
+    // now > time block add class .past
     function colorEL (){
+        if (now == foo) {
+            
+        }
         
     }   
 
+    // whatever the user input in the text area will be saved
+    // .setitem to save value to storage
+    // .getitem to retreeve value from storage
     function saveEl() {
-        
+        // on click of button.. 
+        $(".saveBtn").on("click", function () {
+       
     }
 
    
