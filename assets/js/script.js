@@ -15,19 +15,14 @@
 // -- create an addlistener event on save button
 // -- when button it 'clicked' the user input in that section will be saved using localstorage.setitem.
 
+// ### links that helped me 
+// https://www.w3schools.com/jquery/html_attr.asp
+// https://api.jquery.com/each/
+// https://www.geeksforgeeks.org/difference-between-this-and-this-in-jquery/
+
     //  Create my Variables 
 
-        // need them to save to deignated time block
-    $("#h8 .desription").val(localStorage.getItem("h8"));
-    $("#h9 .description").val(localStorage.getItem("h9"));
-    $("#h10 .description").val(localStorage.getItem("h10"));
-    $("#h11 .description").val(localStorage.getItem("h11"));
-    $("#h12 .description").val(localStorage.getItem("h12"));
-    $("#h13 .description").val(localStorage.getItem("h13"));
-    $("#h14 .description").val(localStorage.getItem("h14"));
-    $("#h15 .description").val(localStorage.getItem("h15"));
-    $("#h16 .description").val(localStorage.getItem("h16"));
-    $("#h17 .description").val(localStorage.getItem("h17"));
+      
 
     var date = moment();
    
@@ -98,16 +93,27 @@
     // .getitem to retreeve value from storage
     
     
-     console.log(timeKey);
+    
         // on click of button.. 
         $(".saveBtn").on("click", function () {
             // save text area input
             var text = $(this).siblings(".description").val();
-            var time = timeKey
+
+           
                  // time should be the key
                  // text should be the value 
-            localStorage.setItem(time,text);
-    })
-    
+        localStorage.setItem ("time",text) ;
+    })       
+      // need them to save to deignated time block
+      $( time, text).val(localStorage.getItem("h0800"));
+      $(time, text).val(localStorage.getItem("h0900"));
+      $(time, text).val(localStorage.getItem("h1000"));
+      $(time, text).val(localStorage.getItem("h1100"));
+      $(time, text).val(localStorage.getItem("h1200"));
+      $(time, text).val(localStorage.getItem("h1300"));
+      $(time, text).val(localStorage.getItem("h1400"));
+      $(time, text).val(localStorage.getItem("h1500"));
+      $(time, text).val(localStorage.getItem("h1600"));
+      $(time, text).val(localStorage.getItem("h1700"));
   
 })

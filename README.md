@@ -19,15 +19,16 @@ With dynamic day planer you'll be able to see current day and time. User will al
 * [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
 * [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
 * [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-* [Jquery](#)
-* [bootstrap](#)
-* [moment.js](#)
+* [Jquery](https://jqueryui.com/)
+* [bootstrap](https://getbootstrap.com/)
+* [moment.js](https://momentjs.com/)
 ---
 ## Deployed Link
 
-* [Daily planner](#)
+* [Daily-planner]( https://705h-s.github.io/Daily-Production-Tracker/)
 
-![website](#)
+
+![website](assets/images/fullsite.png)
 
 ---
 
@@ -42,56 +43,46 @@ In the center of the time block user can input notes. And later save.
 
 ### Current Day and Dynamic Time display 
 
-blah b;ah b;ah blah b;ah blah 
+When user loads app they're greeted with realtime clock and day 
 
-![.gifnav](#)
+![.gifnav](assets/images/time.gif)
 
 
- > code source for blah
+ > using moment.js I can display and format time !
 
 ```javascript
 
-function timeEl() {
-            // player has 1min or 60s to finish quiz.
-        var timeleft =60;
+  // displays dynamic current time 
+        let updateTime = function () {
+            let currentTime = moment().format('h:mm:ss a ')
+            $("#currentTime").text(currentTime)
+        }
+        updateTime();
+
+        setInterval(updateTime, 500);
+    // end of current time display 
       
-        var timeInterval = setInterval(function () {
-        
-          timeleft--; 
-          timer.textContent = timeleft + "s";
-           // quiz stops when timer hits 0
-          if(timeleft === 0) {
-              console.log("Game over!")
-      
-            clearInterval(timeInterval);
-    
-          }
-        }, 1000);
-    };
    
 ```
-
-### Saves User notes
-
-blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
-
 
 ---
 
 
 ### Dynamic colored time blocks
 
-blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+Depending on the time of day. The Time blocks are colored coded. If it is 9:25pm then that time block would be red indicating that it's the present time. If the time has passed then the time block would be grey. Time blocks that have yet to be come are green indicating they're in the future.
 
-
-
+![.gif](assets/images/colorcoded.png)
 
 
 ---
 
 ### Learning points 
 
-blah blah blah blah blah blah blah blah blah blah blah blah blah blah blah
+ I wanted to experiment and try to use [Jquery](https://jqueryui.com/).
+ Even though I have yet to learn vanilla javascript I have found using Jquery to be easier.
+ I've also learned the use of if and else if. I knew the idea of it but I wasn't sure how it worked till now.
+ I also learned how to use [moment.js](https://momentjs.com/). I thought using that api was fun. 
 
 ---
 
