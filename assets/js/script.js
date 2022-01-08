@@ -17,16 +17,17 @@
 
     //  Create my Variables 
 
-    $(".description").val(localStorage.getItem("hour8"));
-    $(".description").val(localStorage.getItem("hour9"));
-    $(".description").val(localStorage.getItem("hour10"));
-    $(".description").val(localStorage.getItem("hour11"));
-    $(".description").val(localStorage.getItem("hour12"));
-    $(".description").val(localStorage.getItem("hour13"));
-    $(".description").val(localStorage.getItem("hour14"));
-    $(".description").val(localStorage.getItem("hour15"));
-    $(".description").val(localStorage.getItem("hour16"));
-    $(".description").val(localStorage.getItem("hour17"))
+        // need them to save to deignated time block
+    $("#h8 .desription").val(localStorage.getItem("h8"));
+    $("#h9 .description").val(localStorage.getItem("h9"));
+    $("#h10 .description").val(localStorage.getItem("h10"));
+    $("#h11 .description").val(localStorage.getItem("h11"));
+    $("#h12 .description").val(localStorage.getItem("h12"));
+    $("#h13 .description").val(localStorage.getItem("h13"));
+    $("#h14 .description").val(localStorage.getItem("h14"));
+    $("#h15 .description").val(localStorage.getItem("h15"));
+    $("#h16 .description").val(localStorage.getItem("h16"));
+    $("#h17 .description").val(localStorage.getItem("h17"));
 
     var date = moment();
    
@@ -58,18 +59,15 @@
         // now == timeblock add class .present
         // now < time block add class .future
         // now > time block add class .past
-    console.log(colorEL())
-
-    function colorEL () {
+    
         // .each(function()) to loop through each element with a class of time_block
-        let timeArr=[]
         
-        let timeBlocks =$('.hour').text().split("hr" );
-        
-        console.log(timeBlocks)
-         timeArr.push(timeBlocks )
-        $('.row').find("p").each(
-             function colorCH () {
+            $(".time-block").each(function () {
+                // decided to use the id parent instead of child class of ".hour"
+             var timeArr = parseInt($(this).attr("id").split("h")[1]);
+                console.log(timeArr);
+
+                // 
                if(timeArr < now ){
                 $(".description").removeClass("future");
                 $(".description").removeClass("present");
@@ -77,34 +75,39 @@
                }
             else if(timeArr === now) {
                 $(".description").removeClass("future");
-                $(".description").addClass("present");
+                
                 $(".description").removeClass("past");
+                $(".description").addClass("present");
             } 
-                else (timeArr > now); {
-                $(".description").addClass("future");
+                else {
+                
                 $(".description").removeClass("present");
                 $(".description").removeClass("past");
+                $(".description").addClass("future");
                 }
                 
             })
       
         
       
-    }   
+     
 
-    saveEl();
+   
     // whatever the user input in the text value will be saved
     // .setitem to save value to storage
     // .getitem to retreeve value from storage
-    function saveEl() {
+    
+    
+     console.log(timeKey);
         // on click of button.. 
         $(".saveBtn").on("click", function () {
-
+            // save text area input
             var text = $(this).siblings(".description").val();
-            var time = $(this).parent().attr("id");
-
+            var time = timeKey
+                 // time should be the key
+                 // text should be the value 
             localStorage.setItem(time,text);
     })
-    }
+    
   
 })
