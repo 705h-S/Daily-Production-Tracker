@@ -17,15 +17,16 @@
 
     //  Create my Variables 
 
-    var Hour9 = document.getElementById("h9")
-    var Hour10 = document.getElementById("h10")
-    var Hour11 = document.getElementById("h11")
-    var Hour12 = document.getElementById("h12")
-    var Hour13 = document.getElementById("h13")
-    var Hour14 = document.getElementById("h14")
-    var Hour15 = document.getElementById("h15")
-    var Hour16 = document.getElementById("h16")
-    var Hour17 = document.getElementById("h17")
+    $(".description").val(localStorage.getItem("hour8"));
+    $(".description").val(localStorage.getItem("hour9"));
+    $(".description").val(localStorage.getItem("hour10"));
+    $(".description").val(localStorage.getItem("hour11"));
+    $(".description").val(localStorage.getItem("hour12"));
+    $(".description").val(localStorage.getItem("hour13"));
+    $(".description").val(localStorage.getItem("hour14"));
+    $(".description").val(localStorage.getItem("hour15"));
+    $(".description").val(localStorage.getItem("hour16"));
+    $(".description").val(localStorage.getItem("hour17"))
 
     var date = moment();
    
@@ -92,16 +93,17 @@
     }   
 
     saveEl();
-    // whatever the user input in the text area will be saved
+    // whatever the user input in the text value will be saved
     // .setitem to save value to storage
     // .getitem to retreeve value from storage
     function saveEl() {
         // on click of button.. 
         $(".saveBtn").on("click", function () {
-            var text = $(this).siblings(".description").val();
 
-            localStorage.setItem(text);
-       
+            var text = $(this).siblings(".description").val();
+            var time = $(this).parent().attr("id");
+
+            localStorage.setItem(time,text);
     })
     }
   
