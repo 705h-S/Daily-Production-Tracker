@@ -32,7 +32,7 @@
     var save;
     
     // now will display current hour 
-    var now = moment().format( " h ");
+    var now = moment().format( " kmm ");
 
     console.log(date);
     console.log(now);
@@ -63,20 +63,30 @@
         // .each(function()) to loop through each element with a class of time_block
         let timeArr=[]
         
-        let timeBlocks =$('.hour').text()
+        let timeBlocks =$('.hour').text().split("hr" );
         
-        console.log(timeBlocks.split("  "))
-        //  timeArr.push( )
+        console.log(timeBlocks)
+         timeArr.push(timeBlocks )
         $('.row').find("p").each(
             (el)=>{
-            //    if(now == timeArr[el]){
-                //  .addClass('.present')
-            //    }
-                console.log('this',$(this))
+               if(now < timeArr[el]){
+                $(".description").removeClass("future");
+                $(".description").removeClass("present");
+                $(".description").addClass("past");
+               }
+            else if(now === timeArr[el]) {
+                $(".description").removeClass("future");
+                $(".description").addClass("present");
+                $(".description").removeClass("past");
+            } 
+                else (now > timeArr[el]); {
+                $(".description").addClass("future");
+                $(".description").removeClass("present");
+                $(".description").removeClass("past");
+                }
                 
-                // text().replace('am','')
             })
-        console.log(timeArr)
+      
         
       
     }   
