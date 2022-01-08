@@ -39,8 +39,8 @@
 
     // currentDay id element= displays current day
 
-    $(document).ready(
-        function(){
+    $(document).ready( function (){
+        
         $("#currentDay").text(date.format("ddd, MMM Do, YYYY" ));
 
         // displays dynamic current time 
@@ -68,18 +68,18 @@
         console.log(timeBlocks)
          timeArr.push(timeBlocks )
         $('.row').find("p").each(
-            (el)=>{
-               if(now < timeArr[el]){
+             function colorCH () {
+               if(timeArr < now ){
                 $(".description").removeClass("future");
                 $(".description").removeClass("present");
                 $(".description").addClass("past");
                }
-            else if(now === timeArr[el]) {
+            else if(timeArr === now) {
                 $(".description").removeClass("future");
                 $(".description").addClass("present");
                 $(".description").removeClass("past");
             } 
-                else (now > timeArr[el]); {
+                else (timeArr > now); {
                 $(".description").addClass("future");
                 $(".description").removeClass("present");
                 $(".description").removeClass("past");
@@ -91,14 +91,18 @@
       
     }   
 
+    saveEl();
     // whatever the user input in the text area will be saved
     // .setitem to save value to storage
     // .getitem to retreeve value from storage
     function saveEl() {
         // on click of button.. 
         $(".saveBtn").on("click", function () {
+            var text = $(this).siblings(".description").val();
+
+            localStorage.setItem(text);
        
     })
-    }}
+    }
   
-)
+})
