@@ -60,13 +60,13 @@ textarea {
 /*  current time section (grandchild) */
 .present {
   background-color: #ff6961;
-  color: white;
+  color: black;
 }
 
 /* time that has yet to come (grandchild) */
 .future {
   background-color: #77dd77;
-  color: white;
+  color:black;
 }
 
 /* styles the save button (grandchild)  */

@@ -16,6 +16,17 @@
 // -- when button it 'clicked' the user input in that section will be saved using localstorage.setitem.
 
     //  Create my Variables 
+
+    var Hour9 = document.getElementById("h9")
+    var Hour10 = document.getElementById("h10")
+    var Hour11 = document.getElementById("h11")
+    var Hour12 = document.getElementById("h12")
+    var Hour13 = document.getElementById("h13")
+    var Hour14 = document.getElementById("h14")
+    var Hour15 = document.getElementById("h15")
+    var Hour16 = document.getElementById("h16")
+    var Hour17 = document.getElementById("h17")
+
     var date = moment();
    
     var save;
@@ -27,27 +38,47 @@
     console.log(now);
 
     // currentDay id element= displays current day
-    $("#currentDay").text(date.format("ddd, MMM Do, YYYY" ));
 
-    // displays dynamic current time 
-     let updateTime = function () {
-        let currentTime = moment().format('h:mm:ss a ')
-        $("#currentTime").text(currentTime)
-    }
-    updateTime();
+    $(document).ready(
+        function(){
+        $("#currentDay").text(date.format("ddd, MMM Do, YYYY" ));
 
-    setInterval(updateTime, 500);
-   // end of current time display 
-    
-    // Time block changes color depending what time 
-    // now == timeblock add class .present
-    // now < time block add class .future
-    // now > time block add class .past
-    function colorEL (){
-        if (now == foo) {
-            
+        // displays dynamic current time 
+        let updateTime = function () {
+            let currentTime = moment().format('h:mm:ss a ')
+            $("#currentTime").text(currentTime)
         }
+        updateTime();
+
+        setInterval(updateTime, 500);
+    // end of current time display 
         
+        // Time block changes color depending what time 
+        // now == timeblock add class .present
+        // now < time block add class .future
+        // now > time block add class .past
+    console.log(colorEL())
+
+    function colorEL () {
+        // .each(function()) to loop through each element with a class of time_block
+        let timeArr=[]
+        
+        let timeBlocks =$('.hour').text()
+        
+        console.log(timeBlocks.split("  "))
+        //  timeArr.push( )
+        $('.row').find("p").each(
+            (el)=>{
+            //    if(now == timeArr[el]){
+                //  .addClass('.present')
+            //    }
+                console.log('this',$(this))
+                
+                // text().replace('am','')
+            })
+        console.log(timeArr)
+        
+      
     }   
 
     // whatever the user input in the text area will be saved
@@ -58,5 +89,6 @@
         $(".saveBtn").on("click", function () {
        
     })
-    }
+    }}
   
+)
